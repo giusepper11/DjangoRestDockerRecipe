@@ -11,7 +11,10 @@ run:
 	docker-compose up
 
 migrate:
-	$(COMMAND) "python web/manage.py migrate"
+	$(COMMAND) "python webapp/manage.py migrate"
+
+static:
+	$(COMMAND) "python webapp/manage.py collectstatic"
 
 check: checksafety checkstyle
 

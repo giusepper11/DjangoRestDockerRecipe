@@ -15,6 +15,6 @@ COPY . /opt/services/djangoapp/src
 RUN cd webapp && python manage.py collectstatic --no-input
 
 
-EXPOSE 80
+#EXPOSE 80
 CMD ["gunicorn", "-c", "config/gunicorn/conf.py", "--bind", ":8000", "--chdir", "webapp", "core.wsgi:application"]
 
