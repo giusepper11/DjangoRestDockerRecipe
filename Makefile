@@ -13,6 +13,10 @@ run:
 migrate:
 	$(COMMAND) "python webapp/manage.py migrate"
 
+
+makemigrations:
+	$(COMMAND) "python webapp/manage.py makemigrations"
+
 static:
 	$(COMMAND) "python webapp/manage.py collectstatic"
 

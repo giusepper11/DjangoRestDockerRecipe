@@ -29,6 +29,14 @@ services:
     depends_on:
       - db
 
+  cache:
+    image: memcached
+    ports:
+      - "11211:11211"
+    entrypoint:
+      - memcached
+      - -m 64
+
   # reverse proxy container (nginx)
   nginx:
     image: nginx:1.13
