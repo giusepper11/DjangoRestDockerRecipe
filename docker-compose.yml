@@ -36,6 +36,10 @@ services:
     entrypoint:
       - memcached
       - -m 64
+    networks:
+      - database
+    depends_on:
+      - db
 
   # reverse proxy container (nginx)
   nginx:
